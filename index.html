@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Weather App - Supriyo</title>
+
+  <!-- Custom Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="search">
+      <input type="text" placeholder="enter city name" spellcheck="false">
+      <button>
+        <img src="/images/search.png" alt="/images/search.png">
+      </button>
+    </div>
+    <div class="cardMain">
+      <div class="image">
+        <img id="weather" src="/images/clear.png" alt="/images/clear.png">
+      </div>
+      <div class="text">
+        <div class="mainH">
+          <div class="temp">
+            <div class="temph1">
+              <h1 id="st1temph1">__ </h1>
+              <h1 id="2ndtemph1">°C</h1>
+            </div>
+          </div>
+          <div class="feelsLike">
+            <h4>Feels Like</h4>
+            <h4 id="feelsLikeh4">__</h4>
+          </div>
+          <div class="name">
+            <div class="nameH1">
+              <h1 id="nameH1">__</h1>
+            </div>
+          </div>
+        </div>
+        <div class="secondary">
+          <div class="humidity">
+            <div class="humidityImg">
+              <img src="/images/humidity.png" alt="/images/humidity.png">
+            </div>
+            <div class="humitityText">
+              <h5 id="humitityText">__</h5>
+              <h5 id="humitity">Humidity</h5>
+            </div>
+          </div>
+          <div class="wind">
+            <div class="windImg">
+              <img src="/images/wind.png" alt="/images/wind.png">
+            </div>
+            <div class="windText">
+              <h5 id="windText">__</h5>
+              <h5 id="wind">Wind Speed</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

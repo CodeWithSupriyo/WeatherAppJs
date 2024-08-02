@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #ECEDFF, #D8DBFF);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 500px;
+  background: linear-gradient(to bottom left, #8667EF, #6A41F4);
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.cardMain {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px
+}
+
+.text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  flex-direction: row;
+  width: 100%;
+}
+
+.temph1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 100px;
+  font-size: 20px;
+}
+
+.feelsLike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E9F6FF;
+  gap: 10px;
+}
+
+.feelsLike h4 {
+  font-weight: 400;
+}
+
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameH1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F1F1F1;
+}
+
+.secondary {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.humidity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #fff;
+  gap: 10px
+}
+
+.humidityImg img {
+  width: 40px;
+}
+
+.humitityText {
+  font-size: 20px;
+  gap: 10px
+}
+
+#humitity {
+  font-size: 10px;
+}
+
+.wind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #fff;
+  gap: 10px
+}
+
+.windImg img {
+  width: 40px;
+}
+
+.windText {
+  font-size: 20px;
+  gap: 10px
+}
+
+#wind {
+  font-size: 10px;
+}
+
+.search {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  Gap: 10px;
+  Margin-top: 10px;
+}
+
+input {
+  border-radius: 30px;
+  border: none;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+}
+
+button {
+  background: #ebfffc;
+  border-radius: 50px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+}
+
+button img {
+  width: 20px;
+}
