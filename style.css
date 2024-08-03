@@ -5,26 +5,54 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to bottom right, #ECEDFF, #D8DBFF);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  justify-content: space-evenly;
+  padding: 30px 0;
+  border-bottom: 1px solid #7A7A7A;
+  background:
+    rgba(215, 8, 8, 0);
+  backdrop-filter:
+    blur(20px);
+  -webkit-backdrop-filter:
+    blur(20px);
+  border-radius:
+    10px;
+    
+}
+
+nav h1 {
+  font-size: 3vw
+}
+
+.mainWrapper {
+  display: flex;
+  margin-top: 150px;
+  margin-left: 5vw
 }
 
 .main {
   display: flex;
   justify-content: center;
   width: 300px;
-  height: 500px;
+  height: 400px;
   background: linear-gradient(to bottom left, #8667EF, #6A41F4);
   border-radius: 25px;
   padding: 20px;
 }
 
 .cardMain {
-  margin-top: 70px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +62,7 @@ body {
 #weather {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 0px; 
   width: 200px
 }
 
@@ -143,11 +171,9 @@ body {
 }
 
 .search {
-  position: absolute;
   display: flex;
   justify-content: center;
   Gap: 10px;
-  Margin-top: 10px;
 }
 
 input {
@@ -173,4 +199,14 @@ button {
 
 button img {
   width: 20px;
+}
+
+.time {
+  color: #C4C9FF;
+}
+.date {
+  color: #C4C9FF;
+}
+.location {
+  color: #C4C9FF;
 }

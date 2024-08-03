@@ -16,13 +16,17 @@
 </head>
 
 <body>
-  <div class="main">
+  <nav>
+      <h1>WeatherApp</h1>
     <div class="search">
-      <input type="text" placeholder="enter city name" spellcheck="false">
-      <button>
-        <img src="/images/search.png" alt="/images/search.png">
-      </button>
-    </div>
+  <input type="text" placeholder="enter city name" spellcheck="false">
+  <button>
+    <img src="/images/search.png" alt="/images/search.png">
+  </button>
+</div>
+  </nav>
+  <div class="mainWrapper">
+  <div class="main">
     <div class="cardMain">
       <div class="image">
         <img id="weather" src="/images/clear.png" alt="/images/clear.png">
@@ -46,7 +50,24 @@
           </div>
         </div>
         <div class="secondary">
-          <div class="humidity">
+          <div class="time">
+            <p>
+              <span id="hours">00</span>
+              <span>:</span>
+              <span id="min">00</span>
+              <span>:</span>
+              <span id="sec">00</span>
+            </p>
+          </div>
+          <div class="date">
+            <p id="date">
+              <span id="dayName">Mon</span>
+              <span id="day">1</span>
+              <span>,</span>
+              <span id="month">Jan</span>
+            </p>
+          </div>
+          <!--<div class="humidity">
             <div class="humidityImg">
               <img src="/images/humidity.png" alt="/images/humidity.png">
             </div>
@@ -62,11 +83,12 @@
             <div class="windText">
               <h5 id="windText">__</h5>
               <h5 id="wind">Wind Speed</h5>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <script src="main.js"></script>
 </body>
