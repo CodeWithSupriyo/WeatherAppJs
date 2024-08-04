@@ -20,6 +20,8 @@ const day = document.querySelector("#day")
 const month = document.querySelector("#month")
 const locationCard1 = document.querySelector("#location")
 const imgWind = document.querySelector("#imgWind")
+const airPressure = document.querySelector("#airPressure")
+const visibility = document.querySelector("#visibility")
 
 setInterval(() => {
   let currentTime = new Date()
@@ -92,6 +94,8 @@ async function checkWeather(city) {
   windText.innerHTML = data.wind.speed + "km/h"
   nameH1.innerHTML = data.name
   imgWind.style.transform = "rotate(" + `${data.wind.deg}` + "deg)"
+  airPressure.innerHTML = data.main.pressure + "hPa"
+  visibility.innerHTML = data.visibility / 1000 + "km"
   console.log(data)
   
   forecastWeather(data.coord.lat, data.coord.lon)
