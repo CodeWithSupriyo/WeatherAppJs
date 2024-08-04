@@ -13,82 +13,90 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-purple-100">
   <nav>
-      <h1>WeatherApp</h1>
     <div class="search">
-  <input type="text" placeholder="enter city name" spellcheck="false">
-  <button>
-    <img src="/images/search.png" alt="/images/search.png">
-  </button>
-</div>
+      <input type="text" placeholder="enter city name" spellcheck="false" class="p-7 bg-white">
+      <button class="bg-white">
+        <img src="/images/search.png" alt="/images/search.png">
+      </button>
+    </div>
   </nav>
-  <div class="mainWrapper">
-  <div class="main">
-    <div class="cardMain">
-      <div class="image">
-        <img id="weather" src="/images/clear.png" alt="/images/clear.png">
-      </div>
-      <div class="text">
-        <div class="mainH">
-          <div class="temp">
-            <div class="temph1">
-              <h1 id="st1temph1">__ </h1>
-              <h1 id="2ndtemph1">°C</h1>
-            </div>
-          </div>
-          <div class="feelsLike">
-            <h4>Feels Like</h4>
-            <h4 id="feelsLikeh4">__</h4>
-          </div>
-          <div class="name">
-            <div class="nameH1">
-              <h1 id="nameH1">__</h1>
-            </div>
-          </div>
+  <div class="mainWrapper flex justify-center">
+    <div class="main">
+      <div class="cardMain">
+        <div class="image">
+          <img id="weather" src="/images/clear.png" alt="/images/clear.png">
         </div>
-        <div class="secondary">
-          <div class="time">
-            <p>
-              <span id="hours">00</span>
-              <span>:</span>
-              <span id="min">00</span>
-              <span>:</span>
-              <span id="sec">00</span>
-            </p>
-          </div>
-          <div class="date">
-            <p id="date">
-              <span id="dayName">Mon</span>
-              <span id="day">1</span>
-              <span>,</span>
-              <span id="month">Jan</span>
-            </p>
-          </div>
-          <!--<div class="humidity">
-            <div class="humidityImg">
-              <img src="/images/humidity.png" alt="/images/humidity.png">
+        <div class="text">
+          <div class="mainH">
+            <div class="temp">
+              <div class="temph1">
+                <h1 id="st1temph1" class="text-5xl font-bold">__ </h1>
+                <h1 id="2ndtemph1" class="text-4xl">°C</h1>
+              </div>
             </div>
-            <div class="humitityText">
-              <h5 id="humitityText">__</h5>
-              <h5 id="humitity">Humidity</h5>
+            <div class="feelsLike">
+              <h4 class="text-xl">Feels Like</h4>
+              <h4 id="feelsLikeh4" class="text-xl font-bold">__</h4>
+            </div>
+            <div class="name">
+              <div class="nameH1">
+                <h1 id="nameH1" class="text-2xl font-bold">__</h1>
+              </div>
             </div>
           </div>
-          <div class="wind">
-            <div class="windImg">
-              <img src="/images/wind.png" alt="/images/wind.png">
+          <div class="secondary">
+            <div class="time">
+              <p>
+                <span id="hours">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+              </p>
             </div>
-            <div class="windText">
-              <h5 id="windText">__</h5>
-              <h5 id="wind">Wind Speed</h5>
-            </div>-->
+            <div class="date">
+              <p id="date">
+                <span id="dayName">Mon</span>
+                <span id="day">1</span>
+                <span>,</span>
+                <span id="month">Jan</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="flex justify-center w-86">
+    <div class="flex justify-center bg-white w-86 h-[50rem] mt-16 rounded-3xl px-10 flex-col">
+      <div class="flex w-100 h-20 justify-center">
+        <h1 class="flex justify-center text-slate-700 text-xl">Today's Highlights</h1>
+      </div>
+      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+        <h2 class="text-white font-bold text-4xl mt-6 flex justify-center">Humidity</h2>
+        <img src="/images/humidity.png" alt="/images/humidity.png" class="w-12 h-12 mt-20 mr-28 absolute">
+        <h5 id="humitityText" class="text-white mt-20 font-bold text-2xl">__</h5>
+      </div>
+      <div class="flex w-100 h-20 justify-center">
+      </div>
+      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+        <h2 class="text-white font-bold text-4xl mt-6 flex justify-center mr-4">Wind</h2>
+        <img src="/images/wind.png" alt="/images/humidity.png" class="w-12 h-12 mt-20 mr-28 absolute" id="imgWind">
+        <h5 id="windText" class="text-white mt-20 font-bold text-2xl ml-12">__</h5>
+      </div>
+      <div class="flex w-100 h-20 justify-center">
+      </div>
+      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+        <h2 class="text-white font-bold text-4xl mt-6 flex justify-center mr-4">Wind</h2>
+        <img src="/images/wind.png" alt="/images/humidity.png" class="w-12 h-12 mt-20 mr-28 absolute" id="imgWind">
+        <h5 id="windText" class="text-white mt-20 font-bold text-2xl ml-12">__</h5>
+      </div>
+    </div>
   </div>
   <script src="main.js"></script>
 </body>

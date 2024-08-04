@@ -8,8 +8,8 @@ const searchButton = document.querySelector(".search button")
 const weatherImage = document.querySelector("#weather")
 const temph1 = document.querySelector("#st1temph1")
 const feelsLikeh4 = document.querySelector("#feelsLikeh4")
-//const humitityText = document.querySelector("#humitityText")
-//const windText = document.querySelector("#windText")
+const humitityText = document.querySelector("#humitityText")
+const windText = document.querySelector("#windText")
 const nameH1 = document.querySelector("#nameH1")
 const date = document.querySelector("#date")
 const hours = document.querySelector("#hours")
@@ -19,6 +19,7 @@ const dayName = document.querySelector("#dayName")
 const day = document.querySelector("#day")
 const month = document.querySelector("#month")
 const locationCard1 = document.querySelector("#location")
+const imgWind = document.querySelector("#imgWind")
 
 setInterval(() => {
   let currentTime = new Date()
@@ -87,10 +88,12 @@ async function checkWeather(city) {
     weatherImage.src = "/images/snow.png"
   }
 
-  //humitityText.innerHTML = data.main.humidity + "%"
-  //windText.innerHTML = data.wind.speed + "km/h"
+  humitityText.innerHTML = data.main.humidity + "%"
+  windText.innerHTML = data.wind.speed + "km/h"
   nameH1.innerHTML = data.name
+  imgWind.style.transform = "rotate(" + `${data.wind.deg}` + "deg)"
   console.log(data)
+  
   forecastWeather(data.coord.lat, data.coord.lon)
 }
 
