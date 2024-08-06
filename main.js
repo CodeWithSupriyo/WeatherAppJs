@@ -1,6 +1,7 @@
 const apikey = 'c44025824eca9a9dd813b9481fe16f66';
 const url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-const url2 = 'http://api.openweathermap.org/data/2.5/forecast?'
+const url2 = 'https://api.openweathermap.org/data/2.5/forecast?'
+const airConditionUrl = 'https://api.openweathermap.org/data/2.5/air_pollution?'
 
 const searchBox = document.querySelector(".search input")
 const searchButton = document.querySelector(".search button")
@@ -22,6 +23,21 @@ const locationCard1 = document.querySelector("#location")
 const imgWind = document.querySelector("#imgWind")
 const airPressure = document.querySelector("#airPressure")
 const visibility = document.querySelector("#visibility")
+const imgPorcast1st = document.querySelector("#imgPorcast1st")
+const imgPorcast2st = document.querySelector("#imgPorcast2st")
+const imgPorcast3st = document.querySelector("#imgPorcast3st")
+const porcast1stTemp = document.querySelector("#porcast1stTemp")
+const porcast2stTemp = document.querySelector("#porcast2stTemp")
+const porcast3stTemp = document.querySelector("#porcast3stTemp")
+const porcast1stTime = document.querySelector("#porcast1stTime")
+const porcast2stTime = document.querySelector("#porcast2stTime")
+const porcast3stTime = document.querySelector("#porcast3stTime")
+const porcast1stDay = document.querySelector("#porcast1stDay")
+const porcast2stDay = document.querySelector("#porcast2stDay")
+const porcast3stDay = document.querySelector("#porcast3stDay")
+const porcast1stDaySpan1 = document.querySelector("#porcast1stDaySpan1")
+const porcast1stDaySpan2 = document.querySelector("#porcast1stDaySpan2")
+const porcast1stDaySpan3 = document.querySelector("#porcast1stDaySpan3")
 
 setInterval(() => {
   let currentTime = new Date()
@@ -30,7 +46,7 @@ setInterval(() => {
   hours.innerHTML = currentTime.getHours()
   min.innerHTML = currentTime.getMinutes()
   sec.innerHTML = currentTime.getSeconds()
-  
+
   const dayNames = [
     "Sun",
     "Mon",
@@ -40,7 +56,7 @@ setInterval(() => {
     "Fri",
     "Sat"
   ]
-  
+
   const mounthNames = [
     "Jan",
     "Feb",
@@ -55,11 +71,11 @@ setInterval(() => {
     "Nov",
     "Dec"
   ]
-  
+
   let getDay = currentTime.getDay()
-  
+
   let getMonth = currentTime.getMonth()
-  
+
   dayName.innerHTML = dayNames[getDay]
   day.innerHTML = currentTime.getDate()
   month.innerHTML = mounthNames[getMonth]
@@ -97,12 +113,98 @@ async function checkWeather(city) {
   airPressure.innerHTML = data.main.pressure + "hPa"
   visibility.innerHTML = data.visibility / 1000 + "km"
   console.log(data)
-  
+
   forecastWeather(data.coord.lat, data.coord.lon)
+  airCondition(data.coord.lat, data.coord.lon)
+
 }
 
 async function forecastWeather(lat, lon) {
   const response = await fetch(url2 + `lat=${lat}` + `&lon=${lon}` + `&appid=${apikey}`)
+  var data = await response.json()
+
+  if (data.list[0].weather[0].main === "Clouds") {
+    imgPorcast1st.src = "/images/clouds.png"
+  } else if (data.list[0].weather[0].main === "Clear") {
+    imgPorcast1st.src = "/images/clear.png"
+  } else if (data.list[0].weather[0].main === "Drizzle") {
+    imgPorcast1st.src = "/images/drizzle.png"
+  } else if (data.list[0].weather[0].main === "Rain") {
+    imgPorcast1st.src = "/images/rain.png"
+  } else if (data.list[0].weather[0].main === "Mist") {
+    imgPorcast1st.src = "/images/mist.png"
+  } else if (data.list[0].weather[0].main == "Snow") {
+    imgPorcast1st.src = "/images/snow.png"
+  }
+
+  if (data.list[1].weather[0].main === "Clouds") {
+    imgPorcast2st.src = "/images/clouds.png"
+  } else if (data.list[1].weather[0].main === "Clear") {
+    imgPorcast2st.src = "/images/clear.png"
+  } else if (data.list[1].weather[0].main === "Drizzle") {
+    imgPorcast2st.src = "/images/drizzle.png"
+  } else if (data.list[1].weather[0].main === "Rain") {
+    imgPorcast2st.src = "/images/rain.png"
+  } else if (data.list[1].weather[0].main === "Mist") {
+    imgPorcast2st.src = "/images/mist.png"
+  } else if (data.list[1].weather[0].main == "Snow") {
+    imgPorcast2st.src = "/images/snow.png"
+  }
+
+  if (data.list[2].weather[0].main === "Clouds") {
+    imgPorcast3st.src = "/images/clouds.png"
+  } else if (data.list[2].weather[0].main === "Clear") {
+    imgPorcast3st.src = "/images/clear.png"
+  } else if (data.list[2].weather[0].main === "Drizzle") {
+    imgPorcast3st.src = "/images/drizzle.png"
+  } else if (data.list[2].weather[0].main === "Rain") {
+    imgPorcast3st.src = "/images/rain.png"
+  } else if (data.list[2].weather[0].main === "Mist") {
+    imgPorcast3st.src = "/images/mist.png"
+  } else if (data.list[2].weather[0].main == "Snow") {
+    imgPorcast3st.src = "/images/snow.png"
+  }
+  
+  let currentTime = new Date()
+
+  const dayNames = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+  ]
+
+  const mounthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ]
+
+  let getDay = currentTime.getDay()
+
+  let getMonth = currentTime.getMonth()
+
+  porcast1stDaySpan1.innerHTML = dayNames[getDay]
+  porcast1stDaySpan2.innerHTML = currentTime.getDate()
+  porcast1stDaySpan3.innerHTML = mounthNames[getMonth]
+
+  console.log(data)
+}
+
+async function airCondition(lat, lon) {
+  const response = await fetch(airConditionUrl + `lat=${lat}` + `&lon=${lon}` + `&appid=${apikey}`)
   var data = await response.json()
   console.log(data)
 }

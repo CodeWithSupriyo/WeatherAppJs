@@ -26,92 +26,153 @@
     </div>
   </nav>
   <div class="flex flex-wrap justify-center gap-x-32 mt-20">
-  <div class="mainWrapper flex justify-center">
-    <div class="main">
-      <div class="cardMain">
-        <div class="image">
-          <img id="weather" src="/images/clear.png" alt="/images/clear.png">
-        </div>
-        <div class="text">
-          <div class="mainH">
-            <div class="temp">
-              <div class="temph1">
-                <h1 id="st1temph1" class="text-5xl font-bold">__ </h1>
-                <h1 id="2ndtemph1" class="text-4xl">°C</h1>
+    <div class="mainWrapper flex justify-center flex-col gap-20">
+      <div class="main">
+        <div class="cardMain">
+          <div class="image">
+            <img id="weather" src="/images/clear.png" alt="/images/clear.png">
+          </div>
+          <div class="text">
+            <div class="mainH">
+              <div class="temp">
+                <div class="temph1">
+                  <h1 id="st1temph1" class="text-5xl font-bold">__ </h1>
+                  <h1 id="2ndtemph1" class="text-4xl">°C</h1>
+                </div>
+              </div>
+              <div class="feelsLike">
+                <h4 class="text-xl">Feels Like</h4>
+                <h4 id="feelsLikeh4" class="text-xl font-bold">__</h4>
+              </div>
+              <div class="name">
+                <div class="nameH1">
+                  <h1 id="nameH1" class="text-2xl font-bold">__</h1>
+                </div>
               </div>
             </div>
-            <div class="feelsLike">
-              <h4 class="text-xl">Feels Like</h4>
-              <h4 id="feelsLikeh4" class="text-xl font-bold">__</h4>
-            </div>
-            <div class="name">
-              <div class="nameH1">
-                <h1 id="nameH1" class="text-2xl font-bold">__</h1>
+            <div class="secondary">
+              <div class="time">
+                <p>
+                  <span id="hours">00</span>
+                  <span>:</span>
+                  <span id="min">00</span>
+                  <span>:</span>
+                  <span id="sec">00</span>
+                </p>
+              </div>
+              <div class="date">
+                <p id="date">
+                  <span id="dayName">Mon</span>
+                  <span id="day">1</span>
+                  <span>,</span>
+                  <span id="month">Jan</span>
+                </p>
               </div>
             </div>
           </div>
-          <div class="secondary">
-            <div class="time">
-              <p>
-                <span id="hours">00</span>
-                <span>:</span>
-                <span id="min">00</span>
-                <span>:</span>
-                <span id="sec">00</span>
-              </p>
+        </div>
+      </div>
+      <div class="flex w-[19rem] h-[24rem] bg-violet-600 rounded-3xl p-8 flex-col gap-y-8">
+        <h5 class="text-gray-100 text-8">3 Highligets Of The Day</h5>
+        <div class="w-[16rem] h-16 flex">
+          <div class="w-[4rem] h-16 flex justify-center">
+            <img src="/images/clear.png" alt="/images/clear.png" id="imgPorcast1st">
+          </div>
+          <div class="w-12 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast1stTemp">____</h6>
+          </div>
+          <div class="w-16 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast1stTime">___</h6>
+          </div>
+          <div class="w-20 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast1stDay">
+              <span id="porcast1stDaySpan1">_</span>,
+              <span id="porcast1stDaySpan2">_</span>
+              <span id="porcast1stDaySpan3">_</span>
+            </h6>
+          </div>
+        </div>
+        <div class="w-[16rem] h-16 flex">
+          <div class="w-[4rem] h-16 flex justify-center">
+            <img src="/images/clear.png" alt="/images/clear.png" id="imgPorcast2st">
+          </div>
+          <div class="w-12 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast2stTemp">____</h6>
+          </div>
+          <div class="w-16 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast2stTime">___</h6>
+          </div>
+          <div class="w-20 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast2stDay">___</h6>
+          </div>
+        </div>
+        <div class="w-[16rem] h-16 flex">
+          <div class="w-[4rem] h-16 flex justify-center">
+            <img src="/images/clear.png" alt="/images/clear.png" id="imgPorcast3st">
+          </div>
+          <div class="w-12 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast3stTemp">____</h6>
+          </div>
+          <div class="w-16 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast3stTime">___</h6>
+          </div>
+          <div class="w-20 h-16 flex justify-center items-center">
+            <h6 class="text-gray-50" id="porcast3stDay">___</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center w-86">
+      <div class="flex justify-center bg-white w-86 h-[65rem] mt-16 rounded-3xl px-10 flex-col">
+        <div class="flex w-100 h-20 justify-center">
+          <h1 class="flex justify-center text-slate-700 text-xl">Today's Highlights</h1>
+        </div>
+        <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+          <h2 class="text-white font-bold text-3xl mt-6 flex justify-center">Humidity</h2>
+          <img src="/images/humidity.png" alt="/images/humidity.png" class="w-12 h-12 mt-20 mr-28 absolute">
+          <h5 id="humitityText" class="text-white mt-20 font-bold text-2xl">__</h5>
+        </div>
+        <div class="flex w-100 h-20 justify-center">
+        </div>
+        <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+          <div class="flex flex-col">
+            <h2 class="text-white font-bold text-3xl mt-6 flex justify-center mr-4">Wind</h2>
+            <div class="flex flex-row mt-8 space-x-28">
+              <img src="/images/wind.png" alt="/images/humidity.png" class="w-12 h-12 mr-28 absolute flex gap-x-8" id="imgWind">
+              <h5 id="windText" class="text-white font-bold text-2xl ml-12 gap-x-8">__</h5>
             </div>
-            <div class="date">
-              <p id="date">
-                <span id="dayName">Mon</span>
-                <span id="day">1</span>
-                <span>,</span>
-                <span id="month">Jan</span>
-              </p>
-            </div>
+          </div>
+        </div>
+        <div class="flex w-100 h-20 justify-center">
+        </div>
+        <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+          <div class="flex justify-center flex-col">
+            <h2 class="text-white font-bold text-3xl mt-4 flex justify-center">Air Presure</h2>
+            <h5 id="airPressure" class="text-white mt-8 font-bold text-2xl ml-8">__</h5>
+          </div>
+        </div>
+        <div class="flex w-100 h-20 justify-center">
+        </div>
+        <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
+          <div class="flex justify-center flex-col">
+            <h2 class="text-white font-bold text-3xl mt-4 flex justify-center">Visibility</h2>
+            <h5 id="visibility" class="text-white mt-8 font-bold text-2xl ml-8">__</h5>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="flex justify-center w-86">
-    <div class="flex justify-center bg-white w-86 h-[65rem] mt-16 rounded-3xl px-10 flex-col">
-      <div class="flex w-100 h-20 justify-center">
-        <h1 class="flex justify-center text-slate-700 text-xl">Today's Highlights</h1>
-      </div>
-      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
-        <h2 class="text-white font-bold text-3xl mt-6 flex justify-center">Humidity</h2>
-        <img src="/images/humidity.png" alt="/images/humidity.png" class="w-12 h-12 mt-20 mr-28 absolute">
-        <h5 id="humitityText" class="text-white mt-20 font-bold text-2xl">__</h5>
-      </div>
-      <div class="flex w-100 h-20 justify-center">
-      </div>
-      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
-        <div class="flex flex-col">
-          <h2 class="text-white font-bold text-3xl mt-6 flex justify-center mr-4">Wind</h2>
-          <div class="flex flex-row mt-8 space-x-28">
-            <img src="/images/wind.png" alt="/images/humidity.png" class="w-12 h-12 mr-28 absolute flex gap-x-8" id="imgWind">
-            <h5 id="windText" class="text-white font-bold text-2xl ml-12 gap-x-8">__</h5>
-          </div>
-        </div>
-      </div>
-      <div class="flex w-100 h-20 justify-center">
-      </div>
-      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
-        <div class="flex justify-center flex-col">
-          <h2 class="text-white font-bold text-3xl mt-4 flex justify-center">Air Presure</h2>
-          <h5 id="airPressure" class="text-white mt-8 font-bold text-2xl ml-8">__</h5>
-        </div>
-      </div>
-      <div class="flex w-100 h-20 justify-center">
-      </div>
-      <div class="flex justify-center bg-violet-600 w-60 h-40 rounded-3xl">
-        <div class="flex justify-center flex-col">
-          <h2 class="text-white font-bold text-3xl mt-4 flex justify-center">Visibility</h2>
-          <h5 id="visibility" class="text-white mt-8 font-bold text-2xl ml-8">__</h5>
-        </div>
+  <div class="w-screen h-64 bg-white mt-20 flex flex-row items-center flex-wrap gap-x-16 justify-center rounded-t-full">
+    <div class="flex justify-center items-center px-24">
+      <h3 class="text-slate-900 text-3xl font-bold ">Supriyo Rana</h3>
+    </div>
+    <div class="flex justify-center items-center px-24">
+      <div class="w-20 h-20 flex justify-center items-center">
+        <a class="w-20 h-20 flex justify-center items-center" href="https://github.com/CodeWithSupriyo">
+          <img class="transition duration-300 ease-in-out hover:scale-110" src="/images/github.svg" alt="/images/github.svg">
+        </a>
       </div>
     </div>
-  </div>
   </div>
   <script src="main.js"></script>
 </body>
