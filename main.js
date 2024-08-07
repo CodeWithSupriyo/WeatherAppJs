@@ -32,12 +32,7 @@ const porcast3stTemp = document.querySelector("#porcast3stTemp")
 const porcast1stTime = document.querySelector("#porcast1stTime")
 const porcast2stTime = document.querySelector("#porcast2stTime")
 const porcast3stTime = document.querySelector("#porcast3stTime")
-const porcast1stDay = document.querySelector("#porcast1stDay")
-const porcast2stDay = document.querySelector("#porcast2stDay")
-const porcast3stDay = document.querySelector("#porcast3stDay")
-const porcast1stDaySpan1 = document.querySelector("#porcast1stDaySpan1")
-const porcast1stDaySpan2 = document.querySelector("#porcast1stDaySpan2")
-const porcast1stDaySpan3 = document.querySelector("#porcast1stDaySpan3")
+const airConditionHTML = document.querySelector("#airCondition")
 
 setInterval(() => {
   let currentTime = new Date()
@@ -164,42 +159,14 @@ async function forecastWeather(lat, lon) {
   } else if (data.list[2].weather[0].main == "Snow") {
     imgPorcast3st.src = "/images/snow.png"
   }
-  
-  let currentTime = new Date()
 
-  const dayNames = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat"
-  ]
+  porcast1stTime.innerHTML = data.list[0].dt_txt
+  porcast2stTime.innerHTML = data.list[1].dt_txt
+  porcast3stTime.innerHTML = data.list[2].dt_txt
 
-  const mounthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ]
-
-  let getDay = currentTime.getDay()
-
-  let getMonth = currentTime.getMonth()
-
-  porcast1stDaySpan1.innerHTML = dayNames[getDay]
-  porcast1stDaySpan2.innerHTML = currentTime.getDate()
-  porcast1stDaySpan3.innerHTML = mounthNames[getMonth]
-
+  porcast1stTemp.innerHTML = Math.round(data.list[0].main.temp - 273.15) + "°C"
+  porcast2stTemp.innerHTML = Math.round(data.list[1].main.temp - 273.15) + "°C"
+  porcast3stTemp.innerHTML = Math.round(data.list[2].main.temp - 273.15) + "°C"
   console.log(data)
 }
 
@@ -207,6 +174,18 @@ async function airCondition(lat, lon) {
   const response = await fetch(airConditionUrl + `lat=${lat}` + `&lon=${lon}` + `&appid=${apikey}`)
   var data = await response.json()
   console.log(data)
+
+  if (data.list[0].components.so2 <= 20) {
+    airConditionHTML.innerHTML = "Good"
+  } else if (data.list[0].components.so2 <= 80) {
+    airConditionHTML.innerHTML = "Fair"
+  } else if (data.list[0].components.so2 <= 250) {
+    airConditionHTML.innerHTML = "Moderate"
+  } else if (data.list[0].components.so2 <= 320) {
+    airConditionHTML.innerHTML = "Poor"
+  } else {
+    airConditionHTML.innerHTML = "Very Poor"
+  }
 }
 
 searchButton.addEventListener("click", () => {
