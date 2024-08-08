@@ -37,7 +37,6 @@ const airConditionHTML = document.querySelector("#airCondition")
 setInterval(() => {
   let currentTime = new Date()
 
-  //console.log(currentTime.getHours())
   hours.innerHTML = currentTime.getHours()
   min.innerHTML = currentTime.getMinutes()
   sec.innerHTML = currentTime.getSeconds()
@@ -82,6 +81,7 @@ async function checkWeather(city) {
 
   temph1.innerHTML = data.main.temp
   feelsLikeh4.innerHTML = data.main.feels_like + "°C"
+  
   if (data.clouds.all <= 10) {
     weatherImage.src = "/images/clear.png"
   } else if (data.clouds.all <= 40) {
@@ -89,6 +89,7 @@ async function checkWeather(city) {
   } else if (data.clouds.all <= 95) {
     weatherImage.src = "/images/clouds.png"
   }
+  
   if (data.weather[0].main == "Rain") {
     weatherImage.src = "/images/rain.png"
   } else if (data.weather[0].main == "Drizzle") {
@@ -107,11 +108,9 @@ async function checkWeather(city) {
   imgWind.style.transform = "rotate(" + `${data.wind.deg}` + "deg)"
   airPressure.innerHTML = data.main.pressure + "hPa"
   visibility.innerHTML = data.visibility / 1000 + "km"
-  console.log(data)
 
   forecastWeather(data.coord.lat, data.coord.lon)
   airCondition(data.coord.lat, data.coord.lon)
-
 }
 
 async function forecastWeather(lat, lon) {
@@ -167,13 +166,11 @@ async function forecastWeather(lat, lon) {
   porcast1stTemp.innerHTML = Math.round(data.list[0].main.temp - 273.15) + "°C"
   porcast2stTemp.innerHTML = Math.round(data.list[1].main.temp - 273.15) + "°C"
   porcast3stTemp.innerHTML = Math.round(data.list[2].main.temp - 273.15) + "°C"
-  console.log(data)
 }
 
 async function airCondition(lat, lon) {
   const response = await fetch(airConditionUrl + `lat=${lat}` + `&lon=${lon}` + `&appid=${apikey}`)
   var data = await response.json()
-  console.log(data)
 
   if (data.list[0].components.so2 <= 20) {
     airConditionHTML.innerHTML = "Good"
